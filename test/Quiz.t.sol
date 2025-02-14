@@ -61,11 +61,13 @@ contract QuizTest is Test {
         quiz.betToPlay{value: q1.max_bet}(1);
     }
 
-    function testFailBetToPlayMin() public {
+    // function testFailBetToPlayMin() public {
+    function test_RevertWhen_BetToPlayMin() public {
         quiz.betToPlay{value: q1.min_bet - 1}(1);
     }
 
-    function testFailBetToPlayMax() public {
+    // function testFailBetToPlayMax() public {
+    function test_RevertWhen_BetToPlayMax() public {
         quiz.betToPlay{value: q1.max_bet + 1}(1);
     }
 
